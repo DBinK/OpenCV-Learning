@@ -6,21 +6,26 @@
 
 #include <iostream>
 
+// 定义一个函数，用于动态分配一个int类型的变量，并返回该变量的地址
 int* createInt(int num) {
-  int* ptr = new int(num);
-  return ptr;
+    // 使用new运算符动态分配一个int类型的变量，并将值初始化为num
+    int* ptr = new int(num);
+    // 返回指向该变量的指针
+    return ptr;
 }
 
 int main() {
-  int num = 42;
-  int* ptr = createInt(num);
+    int num = 42;  // 定义一个整型变量
+    int* ptr = createInt(num);  // 动态分配一个int类型的变量，并将其地址赋给ptr
 
-  std::cout << "ptr 指向的变量的值为: " << *ptr << std::endl;
+    // 输出ptr指向的变量的值
+    std::cout << "ptr 指向的变量的值为: " << *ptr << std::endl;
 
-  delete ptr;  // 释放动态分配的内存
+    delete ptr;  // 释放动态分配的内存，避免内存泄漏
 
-  return 0;
+    return 0;
 }
+
 
 /*
 
