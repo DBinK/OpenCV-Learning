@@ -6,7 +6,9 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "输入程序名称，例如 ${workspaceFolder}/a.out",
-      "args": [],
+      "args": [
+        "`pkg-config --cflags --libs opencv4`"
+      ],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
       "environment": [],
@@ -32,8 +34,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/dbinkv2/op_test",
-      "program": "/home/dbinkv2/op_test/build/Debug/outDebug",
+      "cwd": "/home/dbinkv2/OpenCV-Learning",
+      "program": "/home/dbinkv2/OpenCV-Learning/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
@@ -49,7 +51,19 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}",
-      "args": [],
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "-I/usr/local/include/opencv4",
+        "-L/usr/local/lib/opencv4",
+        "-lopencv_core",
+        "-lopencv_highgui",
+        "-lopencv_imgcodecs",
+        "`pkg-config --cflags --libs opencv4`"
+      ],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
       "environment": [],

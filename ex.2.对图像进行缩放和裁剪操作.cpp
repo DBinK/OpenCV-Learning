@@ -8,40 +8,34 @@
 #include <iostream>
 
 using namespace cv;
+using namespace std;
 
 int main() {
-    // 读入原图
-    Mat image = imread("robomaster.jpg");
-    if (image.empty()) {
-        std::cout << "无法加载图像文件." << std::endl;
-        return -1;
-    }
-
-    // 定义缩放比例
-    double scale = 0.5;
-
-    // 定义裁剪区域
-    Rect roi(200, 200, 400, 400);
-
-    // 定义缩放后的图像和裁剪后的图像
-    Mat scaledImage, croppedImage;
+    // 加载图像
+    Mat img = imread("robomaster.jpg");
 
     // 缩放图像
-    resize(image, scaledImage, Size(), scale, scale);
+    double scale_percent = 0.5; // 缩放比例为50%
+    int width = int(img.cols * scale_percent);
+    int height = int(img.rows * scale_percent);
+    Size dim(width, height);
+    Mat resized_img;
+    resize(img, resized_img, dim, 0, 0, INTER_AREA);
+
+    // 保存缩放后的图像
+    imwrite("robomaster3.jpg", resized_img);
 
     // 裁剪图像
-    croppedImage = image(roi);
+    Rect roi(200, 100, 300, 300); // 裁剪图像的区域为[200, 100, 300, 300]
+    Mat cropped_img = img(roi);
+
+    // 保存裁剪后的图像
+    imwrite("robomaster4.jpg", cropped_img);
 
     // 显示原图、缩放后的图像和裁剪后的图像
-    imshow("原图", image);
-    imshow("缩放后的图像", scaledImage);
-    imshow("裁剪后的图像", croppedImage);
-
-    // 保存缩放后的图像和裁剪后的图像
-    imwrite("robomaster3.jpg", scaledImage);
-    imwrite("robomaster4.jpg", croppedImage);
-
-    waitKey(0);
+    imshow("原图", img);
+    imshow("缩放后的图像", resized_img);
+    imshow("裁剪后的图像", cropped_img);
 
     return 0;
 }
