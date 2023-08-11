@@ -15,8 +15,8 @@ int main() {
     flip(image, horizontalFlip, 1); // 水平翻转
     flip(image, verticalFlip, 0); // 垂直翻转
 
-    // imwrite("output_horizontalFlip.jpg", horizontalFlip); // 保存水平翻转后的图片
-    // imwrite("output_verticalFlip.jpg", verticalFlip); // 保存垂直翻转后的图片
+    imwrite("2.1.horizontalFlip.jpg", horizontalFlip); // 保存水平翻转后的图片
+    imwrite("2.1.verticalFlip.jpg", verticalFlip); // 保存垂直翻转后的图片
 
     imshow("原始图像", image); // 在窗口中显示加载的图像
     imshow("水平翻转的图像", horizontalFlip); // 在窗口中显示水平翻转的图像

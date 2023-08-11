@@ -23,6 +23,7 @@ int main() {
 
     imshow("原始图像", image);
     imshow("阈值化图像", thresholded);
+    imwrite("2.4.thresholded.jpg", thresholded); // 保存边缘图像
 
     waitKey(0); // 等待用户按下按键
     return 0; 

@@ -23,6 +23,7 @@ int main() {
 
     imshow("原始图像", image); 
     imshow("边缘图像", edges);
+    imwrite("2.3.edges.jpg", edges); // 保存边缘图像
 
     waitKey(0); // 等待用户按下按键
     return 0; 
