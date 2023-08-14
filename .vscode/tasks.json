@@ -9,7 +9,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
+                "${fileDirname}/${fileBasenameNoExtension}.out",
                 "-I/usr/local/include/opencv4",
                 "-L/usr/local/lib",
                 "-lopencv_core",

@@ -47,7 +47,7 @@ int main() {
     // 显示带有角点标记的图像
     while (true) {
         cv::imshow("corners", cornerImage);
-	cv::imwrite("corners.png",cornerImage);
+	    cv::imwrite("corners.png",cornerImage);
 
         // 等待用户按下 'q' 键来退出循环
         if (cv::waitKey(120) & 0xff == 'q') {
