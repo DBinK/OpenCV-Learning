@@ -1,0 +1,89 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "opencv4.1.0 compile task",
+            "type": "shell",
+            "command": "D:\\mingw64\\bin\\g++",
+            "args": [
+                "-g",
+                "${workspaceRoot}\\${fileBasename}",
+                "-o",
+                "${workspaceRoot}\\${fileBasenameNoExtension}",
+                "-I",
+                "D:/Program_Files/opencv/build/include/opencv2",
+                "-L",
+                "D:\\mingw64\\bin\\",
+                "-l",
+                "libopencv_calib3d410",
+                "-l",
+                "libopencv_core410",
+                "-l",
+                "libopencv_dnn410",
+                "-l",
+                "libopencv_features2d410",
+                "-l",
+                "libopencv_flann410",
+                "-l",
+                "libopencv_gapi410",
+                "-l",
+                "libopencv_highgui410",
+                "-l",
+                "libopencv_imgcodecs410",
+                "-l",
+                "libopencv_imgproc410",
+                "-l",
+                "libopencv_ml410",
+                "-l",
+                "libopencv_objdetect410",
+                "-l",
+                "libopencv_photo410",
+                "-l",
+                "libopencv_stitching410",
+                "-l",
+                "libopencv_video410",
+                "-l",
+                "libopencv_videoio410",
+                "-l",
+                "opencv_ffmpeg410_64"
+            ],
+            "options": {
+                "cwd": "D:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "presentation": {
+                "panel": "new"
+            }
+        },
+        
+        {
+            "type": "shell",
+            "label": "opencv4.5.2",
+            "command": "D:\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${workspaceFolder}\\RBin\\${fileBasenameNoExtension}.exe",
+                // RBin是自定义的文件夹名，会把生成的EXE放在该文件夹下，要手动创建RBin文件夹
+                // 下面的opencv路径根据自己的路径修改
+                "-I",
+                "D:\\Program_Files\\opencv\\build\\include\\opencv2",
+            ],
+            "options": {
+                "cwd": "D:\\mingw64\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+ 
+    ]
+}
