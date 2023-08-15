@@ -50,7 +50,7 @@
       "name": "C/C++: g++ 生成和调试活动文件",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "program": "${fileDirname}/${fileBasenameNoExtension}.out",
       "args": [
         "-fdiagnostics-color=always",
         "-g",
